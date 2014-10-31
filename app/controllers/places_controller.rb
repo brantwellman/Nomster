@@ -2,7 +2,8 @@ class PlacesController < ApplicationController
 	before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
 	def index
-		@places = Place.all.page(params[:page]).per(6)
+		number_of_places_per_page = 6
+		@places = Place.all.page(params[:page]).per(number_of_places_per_page)
 	end
 
 	def new
