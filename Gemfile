@@ -8,6 +8,7 @@ gem 'devise', '>= 3.2.4'
 gem "geocoder"
 gem "figaro", ">=1.0.0"
 gem 'carrierwave'
+gem "fog", "~> 1.3.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
