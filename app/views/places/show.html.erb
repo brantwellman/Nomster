@@ -34,7 +34,7 @@
 
 	<h2>Photos</h2>
 	<% @place.photos.each do |photo| %>
-		<%= image_tag photo.picture, :class => 'img-thumbnail' %>
+		<%= image_tag photo.picture, :class => 'img-responsive' %>
 		<%= photo.caption %>
 	<% end %>
 	
