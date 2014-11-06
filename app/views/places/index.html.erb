@@ -19,17 +19,10 @@
 					<small><%= place.comments.last.user.email %></small>
 				</blockquote>
 			</div>			
-		<% end %>
-
-
-		
-		<% if place.photos.present? %>
-			<% if place.photos.last.picture.present? %>
+		<% end %>	
+		<% if place.photos.present? %>	
 				<%= image_tag place.photos.last.picture, :class => 'img-responsive' %>
-			<% end %>
 		<% end %>
-		
-
 	</div>
 <% end %>
 
