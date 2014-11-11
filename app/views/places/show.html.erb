@@ -9,7 +9,7 @@
 			  var mapOptions = {
 			    zoom: 13,
 			    center: myCent,
-			    disableDefaultUI: false
+			    disableDefaultUI: true
 			  }
 			  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
@@ -35,8 +35,8 @@
 	<h2>Photos</h2>
 	<div>
 		<% @place.photos.each do |photo| %>
-			<div class="col-xs-4">
-				<%= image_tag photo.picture, :class => 'img-responsive show-image' %>
+			<div class="col-xs-6">
+				<%= image_tag photo.picture, :class => 'img-thumbnail show-image' %>
 				<div class="clear"></div>
 				<%= photo.caption %>
 				<br /><br />
@@ -79,29 +79,29 @@
 <div class="clear"></div>
 
 
-<div class="booyah-box col-xs-10 col-xs-offset-1">
-<div class = "col-xs-10 col-xs-offset-1">
-	<h1 class = "pull-left">Comments</h1>
-	<button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#mycommentModal">
-	  Add a comment
-	</button>
-	<div class="clear"></div>
-</div>
-
-<div class="clear"></div>
-
-<% @place.comments.each do |comment| %>
-	<div class = "col-xs-12 col-sm-6">
-		<blockquote>
-			<% if comment.humanized_rating.present? %>
-				<b><%= comment.humanized_rating %></b> - 
-			<% end %>
-			"<%= comment.message %>"
-			<small><%= comment.user.email %></small>
-		</blockquote>
+<div class="show-booyah-box col-xs-6 col-xs-offset-1">
+	<div class = "col-xs-10 col-xs-offset-1">
+		<h1 class = "pull-left">Comments</h1>
+		<button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#mycommentModal">
+		  Add a comment
+		</button>
+		<div class="clear"></div>
 	</div>
-<% end %>
-</div>
+
+	<div class="clear"></div>
+
+	<% @place.comments.each do |comment| %>
+		<div class = "col-xs-12">
+			<blockquote>
+				<% if comment.humanized_rating.present? %>
+					<b><%= comment.humanized_rating %></b> - 
+				<% end %>
+				"<%= comment.message %>"
+				<small><%= comment.user.email %></small>
+			</blockquote>
+		</div>
+	<% end %>
+	</div>
 </div>
 <!-- Comment Modal -->
 
