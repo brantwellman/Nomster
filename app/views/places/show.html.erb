@@ -33,16 +33,20 @@
 	<p>"<%= @place.description %>"</p>
 	<br />
 	<h2>Photos</h2>
+
 	<div>
 		<% @place.photos.each do |photo| %>
 			<div class="col-xs-6">
-				<%= image_tag photo.picture, :class => 'img-thumbnail show-image' %>
+			<a href="<%= photo.picture %>" data-lightbox="<%= @place.name %>" data-title="<%= photo.caption %>">
+					<%= image_tag photo.picture, :class => 'img-thumbnail' %>
+			</a>
 				<div class="clear"></div>
 				<%= photo.caption %>
 				<br /><br />
 			</div>
 		<% end %>
 	</div>
+
 
 	<!-- Beginning of Photo modal and buttons for Add a Photo, Edit, Delete -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
