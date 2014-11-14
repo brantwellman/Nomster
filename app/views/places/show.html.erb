@@ -33,14 +33,14 @@
 	<p>"<%= @place.description %>"</p>
 	<br />
 	<h2>Photos</h2>
-
+	<br />
 	<div>
 		<% @place.photos.each do |photo| %>
 			<div class="col-xs-6 show-image">
 			<a href="<%= photo.picture %>" data-lightbox="<%= @place.name %>" data-title="<%= photo.caption %>">
 					<%= image_tag photo.picture, :class => 'img-thumbnail' %></a>
 				<div class="clear"></div>
-				<%= photo.caption %>
+				<b><%= photo.caption %></b>
 				<br /><br />
 			</div>
 		<% end %>
@@ -84,7 +84,7 @@
 <div class="clear"></div>
 
 
-<div class="show-booyah-box col-xs-6 col-xs-offset-1">
+<div class="comments-booyah-box col-xs-10 col-xs-offset-1">
 	<div class = "col-xs-10 col-xs-offset-1">
 		<h1 class = "pull-left">Comments</h1>
 		<button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#mycommentModal">
