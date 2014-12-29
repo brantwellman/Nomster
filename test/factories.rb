@@ -11,6 +11,7 @@ FactoryGirl.define do
 		address "123 This St, Gloomy City"
 	    latitude (42.3631519)
     	longitude (-71.056098)
+    	#categories {[FactoryGirl.create(:user)]}
     	#association :user
 	end
 end
